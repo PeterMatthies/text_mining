@@ -29,8 +29,11 @@ for art in art_list[:]:
     for auth in art.authors:
         print auth
     print art.abstract
-    art.add_bacteria_to_article()
+    art.get_bacteria()
+    art.get_diseases()
     print art.bacteria
+    print art.disease_ids
+    print art.disease_names
 # for i in range(len(art_list[:])):
 #     for j in range(i + 1, len(art_list[:])):
 #         if art_list[i] != art_list[j]:

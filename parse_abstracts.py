@@ -1,8 +1,8 @@
 __author__ = 'petr'
 
 from lxml import etree
-from bacteria.bacteria_finder import find_bacteria
-
+from bacteria.find_bacteria import find_bacteria
+from diseases.find_diseases import find_diseases
 
 
 class ArticleClass(object):
@@ -11,18 +11,20 @@ class ArticleClass(object):
         self.abstract = ''
         self.authors = []
         self.year = 0
-        self.deseases = []
+        self.disease_ids = []
+        self.disease_names  =[]
         self.bacteria = []
         self.PMID = 0
         self.dictionary = {}
 
-    def add_bacteria_to_article(self):
+    def get_bacteria(self):
         bacteria_list = find_bacteria(self.abstract)
         if len(bacteria_list) != 0:
             for item in bacteria_list:
                 self.bacteria.append(item)
-                for bacteria in item[1]:
-                    pass
+
+    def get_diseases(self):
+        self.disease_ids, self.disease_names = find_diseases(self.abstract)
 
 
 def parse_articles(path):
@@ -32,7 +34,6 @@ def parse_articles(path):
     articles_list = []
 
     for element in root.iter(tag=etree.Element):
-        # print("%s - %s" % (element.tag, element.text))
         if element is not None and element.tag == 'MedlineCitation':
             article = ArticleClass()
             for citation_child in element:
