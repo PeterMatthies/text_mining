@@ -13,6 +13,7 @@ class ArticleClass(object):
         self.abstract = ''
         self.authors = []
         self.year = 0
+        self.deseases = []
         self.PMID = 0
         self.dictionary = {}
 
@@ -27,15 +28,15 @@ def parse_articles(path):
         # print("%s - %s" % (element.tag, element.text))
         if element.tag == 'MedlineCitation':
             article = ArticleClass()
-            for child in element:
-                if child.tag == 'PMID':
-                    article.PMID = child.text
-                if child.tag == 'Article':
-                    for sub_article in child:
-                        if sub_article.tag == 'Journal':
-                            for journal_child in sub_article:
-                                if journal_child.tag == 'JournalIssue':
-                                    article.year = [a for a in journal_child if a.tag == 'Year'][0]
+            for medline_citation in element:
+                if medline_citation.tag == 'PMID':
+                    article.PMID = medline_citation.text
+                if medline_citation.tag == 'DateCreated':
+                    for date in medline_citation:
+                        if date.tag == 'Year':
+                            article.year = date.text
+                if medline_citation.tag == 'Article':
+                    for sub_article in medline_citation:
                         if sub_article.tag == 'ArticleTitle':
                             article.title = sub_article.text
                         if sub_article.tag == 'Abstract':
@@ -80,26 +81,26 @@ for art in art_list[:]:
     print art.abstract
 
 
-for i in range(len(art_list[:])):
-    for j in range(i+1, len(art_list[:])):
-        if art_list[i] != art_list[j]:
-            articles_graph.add_node(art_list[i].PMID)
-            articles_graph.add_node(art_list[j].PMID)
-        articles_graph.add_edge(art_list[i].PMID, art_list[j].PMID, {'weight': 1})
-        for author in art_list[j].authors:
-            if author in art_list[i].authors:
-                articles_graph[art_list[i].PMID][art_list[j].PMID]['weight'] += 1
+# for i in range(len(art_list[:])):
+#     for j in range(i+1, len(art_list[:])):
+#         if art_list[i] != art_list[j]:
+#             articles_graph.add_node(art_list[i].PMID)
+#             articles_graph.add_node(art_list[j].PMID)
+#         articles_graph.add_edge(art_list[i].PMID, art_list[j].PMID, {'weight': 1})
+#         for author in art_list[j].authors:
+#             if author in art_list[i].authors:
+#                 articles_graph[art_list[i].PMID][art_list[j].PMID]['weight'] += 1
+#
+#
+# for edge in articles_graph.edges():
+#     if articles_graph[edge[0]][edge[1]]['weight'] <= 5:
+#         articles_graph.remove_edge(*edge)
+# for node in articles_graph.nodes():
+#     if len(articles_graph.neighbors(node)) == 0:
+#         articles_graph.remove_node(node)
 
-
-for edge in articles_graph.edges():
-    if articles_graph[edge[0]][edge[1]]['weight'] <= 5:
-        articles_graph.remove_edge(*edge)
-for node in articles_graph.nodes():
-    if len(articles_graph.neighbors(node)) == 0:
-        articles_graph.remove_node(node)
-
-nx.draw(articles_graph)
-plt.show()
+# nx.draw(articles_graph)
+# plt.show()
 
 end = time()
 
