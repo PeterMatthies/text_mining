@@ -28,15 +28,15 @@ def parse_articles(path):
         # print("%s - %s" % (element.tag, element.text))
         if element.tag == 'MedlineCitation':
             article = ArticleClass()
-            for medline_citation in element:
-                if medline_citation.tag == 'PMID':
-                    article.PMID = medline_citation.text
-                if medline_citation.tag == 'DateCreated':
-                    for date in medline_citation:
+            for citation_child in element:
+                if citation_child.tag == 'PMID':
+                    article.PMID = citation_child.text
+                if citation_child.tag == 'DateCreated':
+                    for date in citation_child:
                         if date.tag == 'Year':
                             article.year = date.text
-                if medline_citation.tag == 'Article':
-                    for sub_article in medline_citation:
+                if citation_child.tag == 'Article':
+                    for sub_article in citation_child:
                         if sub_article.tag == 'ArticleTitle':
                             article.title = sub_article.text
                         if sub_article.tag == 'Abstract':
@@ -66,11 +66,11 @@ authors_graph = nx.Graph()
 articles_graph = nx.Graph()
 
 for art in art_list[:]:
-    authors_graph.add_nodes_from(art.authors)
-    for author_1 in art.authors:
-        for author_2 in art.authors:
-            if author_1 != author_2:
-                authors_graph.add_edge(author_1, author_2, {'weight': 1})
+#     authors_graph.add_nodes_from(art.authors)
+#     for author_1 in art.authors:
+#         for author_2 in art.authors:
+#             if author_1 != author_2:
+#                 authors_graph.add_edge(author_1, author_2, {'weight': 1})
 
     print '_' * 80
     print art.title
