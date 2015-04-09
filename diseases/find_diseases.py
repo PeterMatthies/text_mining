@@ -3,8 +3,8 @@ __author__ = 'yarygin_konstantin'
 import disease_list_processing as dlp
 
 
-def find_diseases(abstract):
-    text = abstract.split()
+def find_diseases(text):
+    text = text.split()
     text = map(lambda x: x.strip('.,'), text)
     diseases_in_text = []
     for i, word in enumerate(text):

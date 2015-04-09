@@ -12,7 +12,7 @@ class ArticleClass(object):
         self.authors = []
         self.year = 0
         self.disease_ids = []
-        self.disease_names  =[]
+        self.disease_names = []
         self.bacteria = []
         self.PMID = 0
         self.dictionary = {}
@@ -24,7 +24,7 @@ class ArticleClass(object):
                 self.bacteria.append(item)
 
     def get_diseases(self):
-        self.disease_ids, self.disease_names = find_diseases(self.abstract)
+        self.disease_ids, self.disease_names = find_diseases(' '.join((self.title, self.abstract)))
 
 
 def parse_articles(path):
