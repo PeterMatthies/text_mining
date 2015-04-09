@@ -26,30 +26,30 @@ def parse_articles(path):
 
     for element in root.iter(tag=etree.Element):
         # print("%s - %s" % (element.tag, element.text))
-        if element.tag == 'MedlineCitation':
+        if element is not None and element.tag == 'MedlineCitation':
             article = ArticleClass()
             for citation_child in element:
-                if citation_child.tag == 'PMID':
+                if citation_child is not None and citation_child.tag == 'PMID':
                     article.PMID = citation_child.text
-                if citation_child.tag == 'DateCreated':
+                if citation_child is not None and citation_child.tag == 'DateCreated':
                     for date in citation_child:
-                        if date.tag == 'Year':
+                        if date is not None and date.tag == 'Year':
                             article.year = date.text
-                if citation_child.tag == 'Article':
+                if citation_child is not None and citation_child.tag == 'Article':
                     for sub_article in citation_child:
-                        if sub_article.tag == 'ArticleTitle':
+                        if sub_article is not None and sub_article.tag == 'ArticleTitle':
                             article.title = sub_article.text
-                        if sub_article.tag == 'Abstract':
-                            for sub_element in sub_article:
-                                if sub_element.tag == 'AbstractText':
-                                    article.abstract += sub_element.text
-                        if sub_article.tag == 'AuthorList':
+                        if sub_article is not None and sub_article.tag == 'Abstract':
+                            for sub_abstract in sub_article:
+                                if sub_abstract is not None and sub_abstract.tag == 'AbstractText':
+                                    article.abstract += sub_abstract.text
+                        if sub_article is not None and sub_article.tag == 'AuthorList':
                             for sub_author in sub_article:
                                 last_name = ''
                                 for author in sub_author:
-                                    if author.tag == 'LastName':
+                                    if author is not None and author.tag == 'LastName':
                                         last_name = author.text
-                                    elif author.tag == 'Initials':
+                                    elif author is not None and author.tag == 'Initials':
                                         name = ' '.join((last_name, author.text))
                                         article.authors.append(name)
                     articles_list.append(article)
@@ -76,8 +76,8 @@ for art in art_list[:]:
     print art.title
     print art.year
     print 'PMID=', art.PMID
-    for author in art.authors:
-        print author
+    for auth in art.authors:
+        print auth
     print art.abstract
 
 
