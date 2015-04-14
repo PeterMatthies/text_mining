@@ -26,5 +26,8 @@ def find_diseases(text):
     diseases_in_text = map(lambda x: ' '.join(x), diseases_in_text)
     DOIDs_list = map(lambda x: dlp.diseases[x], diseases_in_text)
     disease_ids = list(set(DOIDs_list))
-    disease_names = map(lambda x: dlp.disease_by_DOID[x][0], DOIDs_list)
-    return disease_ids, disease_names
+    disease_names = map(lambda x: dlp.disease_by_DOID[x][0], disease_ids)
+    disease_ids_dict = {disease_id: 0 for disease_id in disease_ids}
+    for disease_id in DOIDs_list:
+        disease_ids_dict[disease_id] += 1
+    return disease_ids_dict, disease_names
