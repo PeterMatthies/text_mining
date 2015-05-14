@@ -32,11 +32,11 @@ terms_list = [article.dictionary.keys() for article in art_list_full]
 terms_list = reduce(lambda x, y: x + y, terms_list)
 terms_list = list(set(terms_list))
 
-for a in art_list_full:
+for i, a in enumerate(art_list_full):
     used_terms_dict = {term: a.dictionary[term] for term in terms_list if term in a.dictionary.keys()}
     unused_terms_dict = {term: 0 for term in terms_list if term not in a.dictionary.keys()}
     used_terms_dict.update(unused_terms_dict)
-    terms_docs_dict[a.title] = used_terms_dict
+    terms_docs_dict['doc'+str(i+1)] = used_terms_dict
 
 terms_docs_matrix = np.array([terms_docs_dict[d][term] for d in terms_docs_dict
                               for term in terms_docs_dict[d]]).reshape(len(terms_list), len(terms_docs_dict))
