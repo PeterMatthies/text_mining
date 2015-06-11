@@ -1,0 +1,136 @@
+influenza	10	4
+lung disease	10	4
+gastritis	10	4
+septic arthritis	10	4
+diabetes mellitus	10	4
+rhinitis	10	4
+short bowel syndrome	10	4
+cerebrovascular disease	10	4
+lymphoma	10	4
+asthma	10	4
+megacolon	10	4
+gastrointestinal system disease	10	4
+dermatitis	10	4
+appendicitis	10	4
+autism spectrum disorder	10	4
+glucose intolerance	10	4
+hypersensitivity reaction type I disease	10	4
+rheumatoid arthritis	10	4
+cholera	10	4
+atherosclerosis	10	4
+hemochromatosis	10	4
+respiratory failure	10	4
+anorexia nervosa	10	4
+tuberculosis	10	4
+heart disease	10	4
+infective endocarditis	10	4
+dyspepsia	10	4
+fatty liver disease	10	4
+Sjogren's syndrome	10	4
+Huntington's disease	10	4
+allergic rhinitis	10	4
+cystic fibrosis	10	4
+malnutrition	10	4
+hemolytic-uremic syndrome	10	4
+brucellosis	10	4
+constipation	10	4
+metabolic syndrome X	10	4
+ileal disease	10	4
+bacterial vaginosis	10	4
+nephrolithiasis	10	4
+morbid obesity	10	4
+celiac disease	10	4
+pancreatic cancer	10	4
+periodontitis	10	4
+Alzheimer's disease	10	4
+hepatic encephalopathy	10	4
+familial Mediterranean fever	10	4
+irritable bowel syndrome	10	4
+disease by infectious agent	10	4
+dental caries	10	4
+hepatitis	10	4
+endocarditis	10	4
+peptic ulcer disease	10	4
+late pregnancy	10	4
+disease of metabolism	10	4
+stomach disease	10	4
+colorectal cancer	10	4
+malaria	10	4
+hereditary hemorrhagic telangiectasia	10	4
+chronic fatigue syndrome	10	4
+arteriosclerosis	10	4
+gingivitis	10	4
+colorectal adenoma	10	4
+Barrett's esophagus	10	4
+obesity	10	4
+psoriatic arthritis	10	4
+paratuberculosis	10	4
+pervasive developmental disorder	10	4
+pancreatitis	10	4
+cancer	10	4
+dysbaric osteonecrosis	10	4
+hypersensitivity reaction type II disease	10	4
+acute diarrhea	10	4
+cholelithiasis	10	4
+liver disease	10	4
+hyperglycemia	10	4
+acquired immunodeficiency syndrome	10	4
+sudden infant death syndrome	10	4
+food allergy	10	4
+alcoholic liver cirrhosis	10	4
+periodontal disease	10	4
+intestinal disease	10	4
+adenocarcinoma	10	4
+dengue shock syndrome	10	4
+hepatocellular carcinoma	10	4
+psoriasis	10	4
+MALT lymphoma	10	4
+type 2 diabetes mellitus	10	4
+Crohn's disease	10	4
+colon cancer	10	4
+obstructive lung disease	10	4
+cellulitis	10	4
+gastroenteritis	10	4
+familial adenomatous polyposis	10	4
+kidney disease	10	4
+dermatitis herpetiformis	10	4
+colitis	10	4
+ulcerative colitis	10	4
+Lyme disease	10	4
+brain disease	10	4
+pneumonia	10	4
+Human immunodeficiency virus infectious disease	10	4
+gastroesophageal reflux disease	10	4
+chronic obstructive pulmonary disease	10	4
+campylobacteriosis	10	4
+pyoderma	10	4
+lactose intolerance	10	4
+disease	10	4
+Chagas disease	10	4
+primary cutaneous amyloidosis	10	4
+hypertension	10	4
+perinatal necrotizing enterocolitis	10	4
+ischemic colitis	10	4
+congenital heart disease	10	4
+syndrome	10	4
+trypanosomiasis	10	4
+atopic dermatitis	10	4
+diarrhea	10	4
+neutropenia	10	4
+hepatitis B	10	4
+hepatitis C	10	4
+folic acid deficiency	10	4
+colonic disease	10	4
+arthritis	10	4
+adenoma	10	4
+osteoarthritis	10	4
+carcinoma	10	4
+rectum cancer	10	4
+ileitis	10	4
+autistic disorder	10	4
+reactive arthritis	10	4
+telangiectasis	10	4
+peritonitis	10	4
+inflammatory bowel disease	10	4
+liver cirrhosis	10	4
+lung cancer	10	4
